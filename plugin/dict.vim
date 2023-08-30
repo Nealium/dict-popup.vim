@@ -8,5 +8,7 @@ g:loaded_dict_popup = 1
 
 import autoload 'dict.vim'
 
-nnoremap <Plug>(DictPopup) <scriptcmd>dict.DictPopup(expand("<cfile>"))<CR>
-xnoremap <Plug>(DictPopup) y<scriptcmd>dict.DictPopup(getreg('"'))<CR>
+nnoremap <Plug>(dict_popup) <scriptcmd>dict.DictAtCursorPopup(expand("<cfile>"))<CR>
+xnoremap <Plug>(dict_popup) y<scriptcmd>dict.DictAtCursorPopup(getreg('"'))<CR>
+
+command -nargs=1 Dict call dict.DictCenterPopup(<f-args>)
